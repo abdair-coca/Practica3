@@ -53,35 +53,68 @@ El sistema permite gestionar productos, categorías, clientes, pedidos y pagos, 
 * Consultas con Tinker
 
 ---
-
 ## 🧪 Consultas realizadas en Tinker
 
+### 1. Listar todos los productos de una categoría específica
+
 ```php
-// 1. Listar todos los productos de una categoría específica
 $category = Category::where('name', 'Ropa')->first();
 $category->products;
-<img width="1862" height="922" alt="image" src="https://github.com/user-attachments/assets/6f8dfa68-6dd1-4a99-b545-dcc000fddab1" />
+```
 
-// 2. Obtener todos los pedidos de un cliente con sus productos
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6f8dfa68-6dd1-4a99-b545-dcc000fddab1" width="800">
+</p>
+
+---
+
+### 2. Obtener todos los pedidos de un cliente con sus productos
+
+```php
 $customer = Customer::with('orders.products')->first();
 $customer->orders;
-<img width="1388" height="894" alt="image" src="https://github.com/user-attachments/assets/20ad213d-67fe-41a4-b02d-e836cb47b683" />
+```
 
-// 3. Acceder al pago de un pedido específico
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/20ad213d-67fe-41a4-b02d-e836cb47b683" width="800">
+</p>
+
+---
+
+### 3. Acceder al pago de un pedido específico
+
+```php
 $order = Order::find(3);
 $order->payment;
-<img width="660" height="232" alt="image" src="https://github.com/user-attachments/assets/2fe03f27-c71c-4818-8ecb-ef4510d35dce" />
+```
 
-// 4. Usar accessor personalizado (precio formateado)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2fe03f27-c71c-4818-8ecb-ef4510d35dce" width="500">
+</p>
+
+---
+
+### 4. Usar accessor personalizado (precio formateado)
+
+```php
 Product::find(4)->formatted_price;
-<img width="435" height="90" alt="image" src="https://github.com/user-attachments/assets/8fa97602-0d84-4d02-b423-b318f104266d" />
+```
 
-// 5. Contar cuántos productos tiene cada categoría
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8fa97602-0d84-4d02-b423-b318f104266d" width="400">
+</p>
+
+---
+
+### 5. Contar cuántos productos tiene cada categoría
+
+```php
 Category::withCount('products')->get();
-<img width="891" height="748" alt="image" src="https://github.com/user-attachments/assets/6d8f0a7f-2b63-42d3-9346-c8430cf57dc2" />
+```
 
-```
-```
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6d8f0a7f-2b63-42d3-9346-c8430cf57dc2" width="800">
+</p>
 
 ## 🛠️ Instalación y uso
 
