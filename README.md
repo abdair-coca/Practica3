@@ -121,7 +121,7 @@ Category::withCount('products')->get();
 1. Clonar el repositorio:
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/abdair-coca/Practica3
 ```
 
 2. Instalar dependencias:
